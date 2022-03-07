@@ -28,7 +28,7 @@
     <string name="romance">Romance</string>
     <string name="sci_fi">Ciencia Ficción</string>
     <string name="terror">Terror</string>
-    <string name="showTextCalificacion">%d / 5</string>
+    <string name="showTextCalificacion">Calificación: %d de 5</string>
     <string name="showTextDuracion">%d minutos</string>
     <string name="showTextAnio">Año: %s</string>
 
