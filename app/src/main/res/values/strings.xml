@@ -20,6 +20,11 @@
     <string name="btnActualizar">Actualizar</string>
     <string name="btnEditar">Editar</string>
     <string name="btnBorrar">Borrar</string>
+    <string name="showTextCalificacion">Calificación: %d de 5</string>
+    <string name="showTextDuracion">%d minutos</string>
+    <string name="showTextAnio">Año: %s</string>
+    <string name="califRange">Entre 1 y 5</string>
+    <string name="anioRange">El año no puede ser mayor al actual</string>
 
     <string name="accion">Acción</string>
     <string name="documental">Documental</string>
@@ -28,9 +33,13 @@
     <string name="romance">Romance</string>
     <string name="sci_fi">Ciencia Ficción</string>
     <string name="terror">Terror</string>
-    <string name="showTextCalificacion">Calificación: %d de 5</string>
-    <string name="showTextDuracion">%d minutos</string>
-    <string name="showTextAnio">Año: %s</string>
+    <string name="helperRequired">Req *</string>
+    <string name="suffixCalif">/5</string>
+    <string name="btnGuardar">Guardar</string>
+    <string name="textoInsert">Inserta los datos de tu película favorita, ningún campo puede estar vacío</string>
+    <string name="registroVacio">No hay películas para mostrar</string>
+    <string name="textoDetalles">Encontrarás los detalles de la película a continuación, puedes editar o borrar el registro</string>
+    <string name="suffixDuracion">mins</string>
 
     <string-array name="genres">
         <item>@string/accion</item>

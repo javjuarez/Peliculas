@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.peliculas.databinding.ActivityInsertarPeliculaBinding
 import com.example.peliculas.db.DBPeliculas
 import com.google.android.material.textfield.TextInputEditText
+import java.util.*
 
 class InsertarPeliculaActivity : AppCompatActivity() {
 
@@ -44,6 +45,7 @@ class InsertarPeliculaActivity : AppCompatActivity() {
                 ).show()
                 return
             }
+            if (!restriccionesCampos()) return
             val titulo = textInputTitulo.text.toString()
             val anio = textInputAnio.text.toString()
             val duracion = textInputDuracion.text.toString().toInt()
@@ -99,6 +101,22 @@ class InsertarPeliculaActivity : AppCompatActivity() {
             binding.layoutGenero.error = getString(R.string.error_empty_autocomplete)
             true
         } else false
+    }
+
+    private fun restriccionesCampos(): Boolean {
+        with(binding) {
+            val calif = textInputCalificacion.text.toString().toInt()
+            val anio = textInputAnio.text.toString().toInt()
+            if (anio > 2022) {
+                textInputAnio.error = getString(R.string.anioRange)
+                return false
+            }
+            if (calif !in 1..6) {
+                textInputCalificacion.error = getString(R.string.califRange)
+                return false
+            }
+        }
+        return true
     }
 
     override fun onBackPressed() {

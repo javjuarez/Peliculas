@@ -22,7 +22,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Inserta los datos de tu película favorita, ningún campo puede estar vacío"
+        android:text="@string/textoInsert"
         android:textAlignment="center"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -50,8 +50,8 @@
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="16dp"
-            android:hint="Título"
-            app:helperText="Requerido *"
+            android:hint="@string/hintTitulo"
+            app:helperText="@string/helperRequired"
             app:helperTextTextColor="@color/required_red">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -77,8 +77,8 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="16dp"
                 android:layout_weight="0.33"
-                android:hint="Año"
-                app:helperText="Requerido *"
+                android:hint="@string/hintAnio"
+                app:helperText="@string/helperRequired"
                 app:helperTextTextColor="@color/required_red">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -86,6 +86,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:maxLines="4"
                     android:inputType="number" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -98,10 +99,10 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="16dp"
                 android:layout_weight="0.33"
-                android:hint="Duración"
-                app:helperText="Requerido *"
+                android:hint="@string/hintDuracion"
+                app:helperText="@string/helperRequired"
                 app:helperTextTextColor="@color/required_red"
-                app:suffixText="mins">
+                app:suffixText="@string/suffixDuracion">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/textInputDuracion"
@@ -119,15 +120,16 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="16dp"
                 android:layout_weight="0.33"
-                android:hint="Calificación"
-                app:helperText="Requerido *"
+                android:hint="@string/hitnCalificacion"
+                app:helperText="@string/helperRequired"
                 app:helperTextTextColor="@color/required_red"
-                app:suffixText="/5">
+                app:suffixText="@string/suffixCalif">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/textInputCalificacion"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:maxLength="1"
                     android:inputType="number" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -143,7 +145,7 @@
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="16dp"
             app:errorEnabled="true"
-            app:helperText="Requerido *"
+            app:helperText="@string/helperRequired"
             app:helperTextTextColor="@color/required_red">
 
             <AutoCompleteTextView
@@ -151,7 +153,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:inputType="none"
-                android:text="Genero" />
+                android:text="@string/hintGenero" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -170,7 +172,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:onClick="click"
-                android:text="Guardar"
+                android:text="@string/btnGuardar"
                 app:icon="@drawable/ic_save_24"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
