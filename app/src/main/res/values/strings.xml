@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">Peliculas</string>
+    <string name="error_empty_field">El campo no puede estar vacío</string>
+    <string name="error_empty_autocomplete">Elige un género</string>
+
+    <string-array name="genres">
+        <item>Acción</item>
+        <item>Documental</item>
+        <item>Drama</item>
+        <item>Musical</item>
+        <item>Romance</item>
+        <item>Ciencia Ficción</item>
+        <item>Terror</item>
+    </string-array>
 </resources>

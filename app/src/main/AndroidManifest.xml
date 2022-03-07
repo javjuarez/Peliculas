@@ -10,7 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Peliculas">
         <activity
-            android:name=".MainActivity"
+            android:name=".DetallePeliculaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".InsertarPeliculaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PantallaInicioActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
