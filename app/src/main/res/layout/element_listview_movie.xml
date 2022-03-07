@@ -62,14 +62,16 @@
         app:layout_constraintEnd_toStartOf="@+id/guideline7"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline2"
-        tools:srcCompat="@drawable/ic_action" />
+        tools:srcCompat="@drawable/ic_action"
+        android:contentDescription="@string/app_name" />
 
     <TextView
         android:id="@+id/textViewGenero"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="TextView"
         android:textAlignment="center"
+        android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/guideline8"
         app:layout_constraintEnd_toStartOf="@+id/guideline7"
         app:layout_constraintStart_toStartOf="parent"
@@ -81,12 +83,15 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:gravity="center"
-        android:text="TextView"
         android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/guideline4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline7"
-        app:layout_constraintTop_toTopOf="@+id/guideline3" />
+        app:layout_constraintTop_toTopOf="@+id/guideline3"
+        tools:text="TextView" />
 
     <TextView
         android:id="@+id/textViewAnio"
@@ -94,11 +99,13 @@
         android:layout_height="0dp"
         android:layout_marginStart="8dp"
         android:gravity="center_vertical"
-        android:text="TextView"
+        android:textSize="12sp"
+        android:textStyle="bold|italic"
         app:layout_constraintBottom_toTopOf="@+id/guideline5"
         app:layout_constraintEnd_toStartOf="@+id/guideline9"
         app:layout_constraintStart_toStartOf="@+id/guideline7"
-        app:layout_constraintTop_toTopOf="@+id/guideline4" />
+        app:layout_constraintTop_toTopOf="@+id/guideline4"
+        tools:text="TextView" />
 
     <TextView
         android:id="@+id/textViewDuracion"
@@ -106,11 +113,12 @@
         android:layout_height="0dp"
         android:layout_marginStart="8dp"
         android:gravity="center_vertical"
-        android:text="TextView"
+        android:textStyle="bold|italic"
         app:layout_constraintBottom_toTopOf="@+id/guideline5"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline9"
-        app:layout_constraintTop_toTopOf="@+id/guideline4" />
+        app:layout_constraintTop_toTopOf="@+id/guideline4"
+        tools:text="TextView" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline9"
@@ -123,11 +131,13 @@
         android:id="@+id/textViewCalificacion"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="TextView"
         android:textAlignment="center"
+        android:textColor="@color/gold_calif"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/guideline6"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline7"
-        app:layout_constraintTop_toTopOf="@+id/guideline5" />
+        app:layout_constraintTop_toTopOf="@+id/guideline5"
+        tools:text="TextView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
