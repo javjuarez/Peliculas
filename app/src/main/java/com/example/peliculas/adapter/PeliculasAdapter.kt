@@ -30,9 +30,9 @@ class PeliculasAdapter(private val context: Context, private var datos: ArrayLis
         val element = datos[index]
         with(binding) {
             textViewTitulo.text = element.titulo
-            textViewAnio.text = element.anio
-            textViewDuracion.text = element.duracion.toString()
-            textViewCalificacion.text = "${element.calificacion} / 5"
+            textViewAnio.text = context.getString(R.string.showTextAnio, element.anio)
+            textViewDuracion.text = context.getString(R.string.showTextDuracion, element.duracion)
+            textViewCalificacion.text = context.getString(R.string.showTextCalificacion, element.calificacion)
             setGeneroAdapter(element.genero, binding)
         }
         return binding.root
@@ -43,31 +43,31 @@ class PeliculasAdapter(private val context: Context, private var datos: ArrayLis
         {
             when (genero) {
                 Pelicula.ACCION -> {
-                    textViewGenero.text = "Acción"
+                    textViewGenero.text = context.getString(R.string.accion)
                     imgViewGenreIcon.setBackgroundResource(R.drawable.ic_action)
                 }
                 Pelicula.DOCUMENTAL -> {
-                    textViewGenero.text = "Documental"
+                    textViewGenero.text = context.getString(R.string.documental)
                     imgViewGenreIcon.setBackgroundResource(R.drawable.ic_documentary)
                 }
                 Pelicula.DRAMA -> {
-                    textViewGenero.text = "Drama"
+                    textViewGenero.text = context.getString(R.string.drama)
                     imgViewGenreIcon.setBackgroundResource(R.drawable.ic_drama)
                 }
                 Pelicula.MUSICAL -> {
-                    textViewGenero.text = "Musical"
+                    textViewGenero.text = context.getString(R.string.musical)
                     imgViewGenreIcon.setBackgroundResource(R.drawable.ic_musical)
                 }
                 Pelicula.ROMANCE -> {
-                    textViewGenero.text = "Romance"
+                    textViewGenero.text = context.getString(R.string.romance)
                     imgViewGenreIcon.setBackgroundResource(R.drawable.ic_romance)
                 }
                 Pelicula.CIENCIA_FICCION -> {
-                    textViewGenero.text = "Ciencia Ficción"
+                    textViewGenero.text = context.getString(R.string.sci_fi)
                     imgViewGenreIcon.setBackgroundResource(R.drawable.ic_sci_fi)
                 }
                 Pelicula.TERROR -> {
-                    textViewGenero.text = "Terror"
+                    textViewGenero.text = context.getString(R.string.terror)
                     imgViewGenreIcon.setBackgroundResource(R.drawable.ic_terror)
                 }
             }

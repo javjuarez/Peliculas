@@ -40,8 +40,8 @@ class DBPeliculas(private val context: Context?) : DBHelper(context) {
         val dbHelper = DBHelper(context)
         val db = dbHelper.writableDatabase
 
-        var listPeliculas = ArrayList<Pelicula>()
-        var peliculaTmp: Pelicula? = null
+        val listPeliculas = ArrayList<Pelicula>()
+        var peliculaTmp: Pelicula?
         var cursorPeliculas: Cursor? = null
 
         cursorPeliculas = db.rawQuery("SELECT * FROM $TABLE_MOVIES", null)

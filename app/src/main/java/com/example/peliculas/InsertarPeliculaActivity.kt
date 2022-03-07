@@ -39,7 +39,7 @@ class InsertarPeliculaActivity : AppCompatActivity() {
             if (isCamposVacios()) {
                 Toast.makeText(
                     this@InsertarPeliculaActivity,
-                    "Todos los campos son requeridos",
+                    getString(R.string.ToastCamposRequeridos_msg),
                     Toast.LENGTH_SHORT
                 ).show()
                 return
@@ -49,14 +49,13 @@ class InsertarPeliculaActivity : AppCompatActivity() {
             val duracion = textInputDuracion.text.toString().toInt()
             val calificacion = textInputCalificacion.text.toString().toInt()
 
-            Log.d("DEBUG_INSERTAR", "$titulo, $anio, $duracion, $calificacion, $generoSelected")
             val id =
                 dbPeliculas.insertPelicula(titulo, generoSelected, anio, duracion, calificacion)
 
             if (id > 0) {
                 Toast.makeText(
                     this@InsertarPeliculaActivity,
-                    "Registro guardado correctamente",
+                    getString(R.string.ToastInsertar_msg),
                     Toast.LENGTH_SHORT
                 ).show()
                 textInputTitulo.setText("")
@@ -68,7 +67,7 @@ class InsertarPeliculaActivity : AppCompatActivity() {
                 textInputTitulo.requestFocus()
             } else Toast.makeText(
                 this@InsertarPeliculaActivity,
-                "Error al guardar el juego",
+                getString(R.string.ToastErrorInsertar_msg),
                 Toast.LENGTH_LONG
             ).show()
         }

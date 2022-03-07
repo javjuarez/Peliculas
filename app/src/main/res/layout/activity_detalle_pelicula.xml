@@ -51,7 +51,7 @@
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="16dp"
             android:enabled="false"
-            android:hint="Título">
+            android:hint="@string/hintTitulo">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/textInputTitulo"
@@ -66,7 +66,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:layout_marginBottom="16dp"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:baselineAligned="false">
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/layoutAnio"
@@ -77,7 +78,7 @@
                 android:layout_marginEnd="16dp"
                 android:layout_weight="0.33"
                 android:enabled="false"
-                android:hint="Año">
+                android:hint="@string/hintAnio">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/textInputAnio"
@@ -97,8 +98,7 @@
                 android:layout_marginEnd="16dp"
                 android:layout_weight="0.33"
                 android:enabled="false"
-
-                android:hint="Duración"
+                android:hint="@string/hintDuracion"
                 app:suffixText="mins">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -118,7 +118,7 @@
                 android:layout_marginEnd="16dp"
                 android:layout_weight="0.33"
                 android:enabled="false"
-                android:hint="Calificación"
+                android:hint="@string/hitnCalificacion"
                 app:suffixText="/5">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -146,7 +146,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:inputType="none"
-                android:text="Genero" />
+                android:text="@string/hintGenero" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -165,7 +165,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:onClick="click"
-                android:text="Guardar"
+                android:text="@string/btnActualizar"
                 android:visibility="gone"
                 app:icon="@drawable/ic_save_24"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -177,7 +177,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
                 android:onClick="click"
-                android:text="Editar"
+                android:text="@string/btnEditar"
                 app:icon="@drawable/ic_edit_24"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
@@ -188,7 +188,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:onClick="click"
-                android:text="Borrar"
+                android:text="@string/btnBorrar"
                 app:icon="@drawable/ic_delete_24"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />

@@ -9,12 +9,12 @@ data class Pelicula(
     var calificacion: Int
 ) {
     companion object {
-        val ACCION = 0
-        val DOCUMENTAL = 1
-        val DRAMA = 2
-        val MUSICAL = 3
-        val ROMANCE = 4
-        val CIENCIA_FICCION = 5
-        val TERROR = 6
+        const val ACCION = 0
+        const val DOCUMENTAL = 1
+        const val DRAMA = 2
+        const val MUSICAL = 3
+        const val ROMANCE = 4
+        const val CIENCIA_FICCION = 5
+        const val TERROR = 6
     }
 }

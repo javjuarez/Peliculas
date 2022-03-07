@@ -70,19 +70,19 @@ class DetallePeliculaActivity : AppCompatActivity() {
                 }
                 R.id.btnBorrar -> {
                     AlertDialog.Builder(this@DetallePeliculaActivity)
-                        .setTitle("Confirmación")
-                        .setMessage("¿Estás seguro que quieres eliminar la película ${pelicula?.titulo}?")
-                        .setPositiveButton("Sí", DialogInterface.OnClickListener { dialogInterface, i ->
+                        .setTitle(getString(R.string.AlertDialog_title))
+                        .setMessage(getString(R.string.AlertDialog_message, pelicula?.titulo))
+                        .setPositiveButton(getText(R.string.AlertDialog_yes), DialogInterface.OnClickListener { dialogInterface, i ->
                             if(dbPeliculas.deletePelicula(id)) {
                                 Toast.makeText(
                                     this@DetallePeliculaActivity,
-                                    "Registro eliminado exitosamente",
+                                    getString(R.string.ToastEliminar_msg),
                                     Toast.LENGTH_LONG).show()
                                 startActivity(Intent(this@DetallePeliculaActivity, PantallaInicioActivity::class.java))
                                 finish()
                             }
                         })
-                        .setNegativeButton("No", DialogInterface.OnClickListener { _ , _ -> return@OnClickListener })
+                        .setNegativeButton(getString(R.string.AlertDialog_no), DialogInterface.OnClickListener { _ , _ -> return@OnClickListener })
                         .show()
                 }
                 R.id.btnActualizar -> {
@@ -93,7 +93,7 @@ class DetallePeliculaActivity : AppCompatActivity() {
                     if (dbPeliculas.updatePelicula(id, titulo, generoSelected, anio, duracion,calificacion)) {
                         Toast.makeText(
                             this@DetallePeliculaActivity,
-                            "Registro guardado correctamente",
+                            getString(R.string.ToastActualizar_msg),
                             Toast.LENGTH_SHORT
                         ).show()
                         startActivity(Intent(this@DetallePeliculaActivity,
@@ -101,7 +101,7 @@ class DetallePeliculaActivity : AppCompatActivity() {
                         finish()
                     } else Toast.makeText(
                         this@DetallePeliculaActivity,
-                        "Error al guardar el juego",
+                        getString(R.string.ToastErrorActualizar_msg),
                         Toast.LENGTH_LONG
                     ).show()
                 }

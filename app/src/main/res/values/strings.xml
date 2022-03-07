@@ -2,14 +2,43 @@
     <string name="app_name">Peliculas</string>
     <string name="error_empty_field">El campo no puede estar vacío</string>
     <string name="error_empty_autocomplete">Elige un género</string>
+    <string name="AlertDialog_title">"Confirmación"</string>
+    <string name="AlertDialog_message">¿Estás seguro que quieres eliminar la película %s?</string>
+    <string name="AlertDialog_yes">Sí</string>
+    <string name="ToastEliminar_msg">Registro eliminado exitosamente</string>
+    <string name="AlertDialog_no">No</string>
+    <string name="ToastActualizar_msg">Registro actualizado correctamente</string>
+    <string name="ToastErrorActualizar_msg">Error al actualizar la película</string>
+    <string name="ToastCamposRequeridos_msg">Todos los campos son requeridos</string>
+    <string name="ToastInsertar_msg">Registro guardado correctamente</string>
+    <string name="ToastErrorInsertar_msg">Error al guardar la película</string>
+    <string name="hintTitulo">Título</string>
+    <string name="hintAnio">Año</string>
+    <string name="hintDuracion">Duración</string>
+    <string name="hitnCalificacion">Calificación</string>
+    <string name="hintGenero">Género</string>
+    <string name="btnActualizar">Actualizar</string>
+    <string name="btnEditar">Editar</string>
+    <string name="btnBorrar">Borrar</string>
+
+    <string name="accion">Acción</string>
+    <string name="documental">Documental</string>
+    <string name="drama">Drama</string>
+    <string name="musical">Musical</string>
+    <string name="romance">Romance</string>
+    <string name="sci_fi">Ciencia Ficción</string>
+    <string name="terror">Terror</string>
+    <string name="showTextCalificacion">%d / 5</string>
+    <string name="showTextDuracion">%d minutos</string>
+    <string name="showTextAnio">Año: %s</string>
 
     <string-array name="genres">
-        <item>Acción</item>
-        <item>Documental</item>
-        <item>Drama</item>
-        <item>Musical</item>
-        <item>Romance</item>
-        <item>Ciencia Ficción</item>
-        <item>Terror</item>
+        <item>@string/accion</item>
+        <item>@string/documental</item>
+        <item>@string/drama</item>
+        <item>@string/musical</item>
+        <item>@string/romance</item>
+        <item>@string/sci_fi</item>
+        <item>@string/terror</item>
     </string-array>
 </resources>
