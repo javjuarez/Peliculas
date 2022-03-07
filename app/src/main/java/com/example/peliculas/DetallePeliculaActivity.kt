@@ -14,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.peliculas.databinding.ActivityDetallePeliculaBinding
 import com.example.peliculas.db.DBPeliculas
 import com.example.peliculas.model.Pelicula
+import com.google.android.material.textfield.TextInputEditText
 
 class DetallePeliculaActivity : AppCompatActivity() {
 
@@ -86,6 +87,15 @@ class DetallePeliculaActivity : AppCompatActivity() {
                         .show()
                 }
                 R.id.btnActualizar -> {
+                    if (isCamposVacios()) {
+                        Toast.makeText(
+                            this@DetallePeliculaActivity,
+                            getString(R.string.ToastCamposRequeridos_msg),
+                            Toast.LENGTH_SHORT
+                        ).show()
+                        return
+                    }
+                    if (!restriccionesCampos()) return
                     val titulo = textInputTitulo.text.toString()
                     val anio = textInputAnio.text.toString()
                     val duracion = textInputDuracion.text.toString().toInt()
@@ -114,6 +124,50 @@ class DetallePeliculaActivity : AppCompatActivity() {
         val items = resources.getStringArray(R.array.genres)
         val adapter = ArrayAdapter(this, R.layout.list_item_autocomplete, items)
         (binding.autoCompleteGenero as? AutoCompleteTextView)?.setAdapter(adapter)
+    }
+
+    // Validaciones
+    private fun isCamposVacios(): Boolean {
+        with(binding) {
+            return (campoVacio(textInputTitulo) || campoVacio(textInputAnio) ||
+                    campoVacio(textInputDuracion) || campoVacio(textInputCalificacion) ||
+                    autocompleteNoValido())
+        }
+    }
+
+    // Auxiliares
+
+    private fun campoVacio(editText: TextInputEditText): Boolean {
+        var esVacio = false
+        if (editText.text.toString() == "") {
+            editText.error = getString(R.string.error_empty_field)
+            esVacio = true
+        }
+        return esVacio
+    }
+
+    private fun autocompleteNoValido(): Boolean {
+        return if (generoSelected == -1) {
+            binding.layoutGenero.error = getString(R.string.error_empty_autocomplete)
+            true
+        } else false
+    }
+
+    private fun restriccionesCampos(): Boolean {
+        var cumpleRestriccion = true
+        with(binding) {
+            val calif = textInputCalificacion.text.toString().toInt()
+            val anio = textInputAnio.text.toString().toInt()
+            if (anio > 2022) {
+                textInputAnio.error = getString(R.string.anioRange)
+                cumpleRestriccion = false
+            }
+            if (calif !in 1..5) {
+                textInputCalificacion.error = getString(R.string.califRange)
+                cumpleRestriccion = false
+            }
+        }
+        return cumpleRestriccion
     }
 
     override fun onBackPressed() {

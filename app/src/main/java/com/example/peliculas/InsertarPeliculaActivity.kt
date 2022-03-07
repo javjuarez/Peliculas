@@ -104,19 +104,20 @@ class InsertarPeliculaActivity : AppCompatActivity() {
     }
 
     private fun restriccionesCampos(): Boolean {
+        var cumpleRestriccion = true
         with(binding) {
             val calif = textInputCalificacion.text.toString().toInt()
             val anio = textInputAnio.text.toString().toInt()
             if (anio > 2022) {
                 textInputAnio.error = getString(R.string.anioRange)
-                return false
+                cumpleRestriccion = false
             }
-            if (calif !in 1..6) {
+            if (calif !in 1..5) {
                 textInputCalificacion.error = getString(R.string.califRange)
-                return false
+                cumpleRestriccion = false
             }
         }
-        return true
+        return cumpleRestriccion
     }
 
     override fun onBackPressed() {
