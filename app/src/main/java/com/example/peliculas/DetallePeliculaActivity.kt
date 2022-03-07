@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
 import android.widget.Toast
@@ -35,6 +36,10 @@ class DetallePeliculaActivity : AppCompatActivity() {
 
         dbPeliculas = DBPeliculas(this)
         pelicula = dbPeliculas.getPelicula(id)
+
+        binding.autoCompleteGenero.onItemClickListener =
+            AdapterView.OnItemClickListener { _, _, i, _ -> generoSelected = i }
+        setContentView(binding.root)
 
         if (pelicula != null) {
             with(binding) {

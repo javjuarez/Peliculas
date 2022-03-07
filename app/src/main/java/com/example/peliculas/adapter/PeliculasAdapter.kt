@@ -33,6 +33,7 @@ class PeliculasAdapter(private val context: Context, private var datos: ArrayLis
             textViewAnio.text = element.anio
             textViewDuracion.text = element.duracion.toString()
             textViewCalificacion.text = "${element.calificacion} / 5"
+            setGeneroAdapter(element.genero, binding)
         }
         return binding.root
     }
